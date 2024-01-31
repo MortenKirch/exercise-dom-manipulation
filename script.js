@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function(){
     const deleteLastActivityBtn = document.getElementById("deleteLastActivityBtn");
 
     addActivityBtn.addEventListener("click", addActivity);
-    
-    function addActivity(){
+        
+        function addActivity(){
         let userInputText = userInput.value.trim();
-        if (userInputText !== "") { // Fix the condition
+        if (userInputText !== "" && isNaN(userInputText)) { // Fix the condition
             let newListItem = document.createElement("li");
             newListItem.innerText = userInputText;
             newListItem.className = "menu-item";
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
         } else {
             alert("Please enter a sports activity");
         }
+ 
     }
 
     deleteLastActivityBtn.addEventListener("click", deleteLastActivity);
